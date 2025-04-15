@@ -1,4 +1,4 @@
 package com.example.miniapp.repositories;
 
-public class PaymentRepository {
+public interface PaymentRepository {
 }

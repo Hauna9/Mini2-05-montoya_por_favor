@@ -1,4 +1,4 @@
 package com.example.miniapp.repositories;
 
-public class CaptainRepository {
+public interface CaptainRepository {
 }
