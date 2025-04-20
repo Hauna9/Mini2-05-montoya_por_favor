@@ -14,7 +14,7 @@ public class Trip {
     private LocalDateTime tripDate;
     private String origin;
     private String destination;
-    private double tripCost;
+    private Double tripCost;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "captain_id")
     @JsonBackReference
@@ -28,14 +28,14 @@ public class Trip {
     public Trip() {
     }
 
-    public Trip(LocalDateTime tripDate, String origin, String destination, double tripCost) {
+    public Trip(LocalDateTime tripDate, String origin, String destination, Double tripCost) {
         this.tripDate = tripDate;
         this.origin = origin;
         this.destination = destination;
         this.tripCost = tripCost;
     }
 
-    public Trip(LocalDateTime tripDate, String origin, String destination, double tripCost, Captain captain, Customer customer) {
+    public Trip(LocalDateTime tripDate, String origin, String destination, Double tripCost, Captain captain, Customer customer) {
         this.tripDate = tripDate;
         this.origin = origin;
         this.destination = destination;
@@ -65,10 +65,10 @@ public class Trip {
     public void setDestination(String destination) {
         this.destination = destination;
     }
-    public double getTripCost() {
+    public Double getTripCost() {
         return tripCost;
     }
-    public void setTripCost(double tripCost) {
+    public void setTripCost(Double tripCost) {
         this.tripCost = tripCost;
     }
 }
