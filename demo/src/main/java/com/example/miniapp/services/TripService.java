@@ -46,7 +46,7 @@ public class TripService {
         tripRepository.deleteById(id);
     }
 
-    public List<Trip> findTripsWithinDateRange(LocalDate startDate, LocalDate endDate){
+    public List<Trip> findTripsWithinDateRange(LocalDateTime startDate, LocalDateTime endDate){
         return tripRepository.findTripsByDateRange(startDate, endDate);
     }
 
