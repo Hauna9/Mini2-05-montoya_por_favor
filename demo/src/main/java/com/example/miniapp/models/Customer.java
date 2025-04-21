@@ -1,5 +1,5 @@
-
 package com.example.miniapp.models;
+
 
 import jakarta.persistence.*;
 import java.util.ArrayList;
@@ -86,4 +86,4 @@ public class Customer {
         trips.remove(trip);
         trip.setCustomer(null);
     }
-}
+

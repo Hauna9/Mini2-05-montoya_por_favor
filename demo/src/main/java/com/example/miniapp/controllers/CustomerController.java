@@ -1,5 +1,6 @@
 package com.example.miniapp.controllers;
 
+
 import com.example.miniapp.models.Customer;
 import com.example.miniapp.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,3 +61,4 @@ public class CustomerController {
         return customerService.findCustomersByPhonePrefix(prefix);
     }
 }
+

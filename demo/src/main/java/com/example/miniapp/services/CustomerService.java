@@ -1,5 +1,5 @@
-
 package com.example.miniapp.services;
+
 
 import com.example.miniapp.models.Customer;
 import com.example.miniapp.repositories.CustomerRepository;
@@ -57,4 +57,5 @@ public class CustomerService {
     public List<Customer> findCustomersByPhonePrefix(String prefix) {
         return customerRepository.findCustomersByPhonePrefix(prefix);
     }
+
 }

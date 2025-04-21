@@ -1,9 +1,9 @@
 services:
   postgres:
     image: postgres
-    container_name: postgres_lab6
+    container_name: mini2project
     environment:
-      POSTGRES_DB: lab6
+      POSTGRES_DB: mini2db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
     ports:
@@ -18,9 +18,12 @@ services:
     ports:
       - "8080:8080"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres_lab6:5432/lab6
+      SPRING_DATASOURCE_URL: jdbc:postgresql://mini2project:5432/mini2db
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: 1234
+      SPRING_DATA_MONGODB_URI: mongodb://root:example@mongo:27017/rating?authSource=admin
+
+
 
 
   # MongoDB
