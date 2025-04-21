@@ -2,10 +2,12 @@ package com.example.miniapp.models;
 import java.time.LocalDateTime;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
 
 @Entity
+@Table(name ="trips")
 public class Trip {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,11 +16,14 @@ public class Trip {
     private String origin;
     private String destination;
     private Double tripCost;
+
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "captain_id")
     @JsonBackReference
     private Captain captain;
 
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "customer_id")
     @JsonBackReference

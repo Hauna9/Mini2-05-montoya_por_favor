@@ -4,8 +4,8 @@ services:
     container_name: mini2project
     environment:
       POSTGRES_DB: mini2db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 1234
+      POSTGRES_USER: postgresss
+      POSTGRES_PASSWORD: 12345
     ports:
       - "5432:5432"
 
@@ -19,9 +19,9 @@ services:
       - "8080:8080"
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://mini2project:5432/mini2db
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: 1234
-      SPRING_DATA_MONGODB_URI: mongodb://root:example@mongo:27017/rating?authSource=admin
+      SPRING_DATASOURCE_USERNAME: postgresss
+      SPRING_DATASOURCE_PASSWORD: 12345
+      SPRING_DATA_MONGODB_URI: mongodb://root:example@mongo:27017/ratings?authSource=admin
 
 
 
@@ -33,7 +33,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
-      MONGO_INITDB_DATABASE: bookstore
+      MONGO_INITDB_DATABASE: ratings
     ports:
       - "27017:27017"
 
