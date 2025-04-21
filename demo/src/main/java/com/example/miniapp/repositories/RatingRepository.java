@@ -14,4 +14,5 @@ public interface RatingRepository extends MongoRepository<Rating, String> {
 
     // Retrieve ratings with a score above a specified value
     List<Rating> findByScoreGreaterThan(Integer score);
+
 }
