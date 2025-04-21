@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
 
-@Component
+@Entity
 public class Trip {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -69,5 +69,17 @@ public class Trip {
     }
     public void setTripCost(Double tripCost) {
         this.tripCost = tripCost;
+    }
+    public Captain getCaptain() {
+        return captain;
+    }
+    public void setCaptain(Captain captain) {
+        this.captain = captain;
+    }
+    public Customer getCustomer() {
+        return customer;
+    }
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }

@@ -33,13 +33,14 @@ public class RatingController {
     // 9.5.2.3 Delete Rating
     @DeleteMapping("/delete/{id}")
     public String deleteRating(@PathVariable String id) {
-        return ratingService.deleteRating(id);
+        ratingService.deleteRating(id);
+        return "Rating with ID " + id + " deleted successfully.";
     }
 
     // 9.5.2.4 Find Ratings For a Specific Entity
     @GetMapping("/findByEntity")
     public List<Rating> findRatingsByEntity(@RequestParam Long entityId, @RequestParam String entityType) {
-        return ratingService.findRatingsByEntity(entityId, entityType);
+        return ratingService.getRatingsByEntity(entityId, entityType);
     }
 
     // 9.5.2.5 Find Ratings Above a Specific Value

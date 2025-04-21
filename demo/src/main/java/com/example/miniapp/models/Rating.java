@@ -1,9 +1,14 @@
 package com.example.miniapp.models;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.time.LocalDateTime;
 
+@Document("ratings")
 public class Rating {
 
+    @Id
     private String id;
     private Long entityId;
     private String entityType;
@@ -16,12 +21,12 @@ public class Rating {
     }
 
     // Partial constructor (without id and ratingDate)
-    public Rating(Long entityId, String entityType, Integer score, String comment) {
+    public Rating(Long entityId, String entityType, Integer score, String comment, LocalDateTime ratingDate) {
         this.entityId = entityId;
         this.entityType = entityType;
         this.score = score;
         this.comment = comment;
-        this.ratingDate = LocalDateTime.now(); // Optionally set ratingDate to now
+        this.ratingDate = ratingDate;
     }
 
     // Full constructor
