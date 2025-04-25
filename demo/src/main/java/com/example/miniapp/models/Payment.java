@@ -1,6 +1,7 @@
 package com.example.miniapp.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
 
@@ -8,31 +9,32 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 @Entity
-@Table(name = "payment")
+@Table(name = "payments")
 public class Payment {
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private double amount;
+    private Long id;
+    private Double amount;
     private String paymentMethod;
     private Boolean paymentStatus;
 
+    @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "trip_id")
     private Trip trip; //todo make sure mapped by in trip one to one
 
     public Payment() {
     }
-    public Payment(double amount, String paymentMethod, Boolean paymentStatus) {
+    public Payment(Double amount, String paymentMethod, Boolean paymentStatus) {
         this.amount = amount;
         this.paymentMethod = paymentMethod;
         this.paymentStatus = paymentStatus;
 
     }
 
-    public Payment(long id, double amount, String paymentMethod, Boolean paymentStatus) {
+    public Payment(Long id, double amount, String paymentMethod, Boolean paymentStatus) {
         this.id = id;
         this.amount = amount;
         this.paymentMethod = paymentMethod;
@@ -53,7 +55,7 @@ public class Payment {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 

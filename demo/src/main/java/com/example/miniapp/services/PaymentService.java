@@ -27,11 +27,11 @@ public class PaymentService {
 
     //FIXME wont we lost valyes by typecasting into int?
     public Payment getPaymentById(Long id) {
-        return paymentRepository.findById(id.intValue()).orElse(null);
+        return paymentRepository.findById(id).orElse(null);
     }
 
     public Payment updatePayment(Long id, Payment payment){
-        Payment existingPayment = paymentRepository.findById(id.intValue()).orElse(null);
+        Payment existingPayment = paymentRepository.findById(id).orElse(null);
         if (existingPayment != null) {
             existingPayment.setAmount(payment.getAmount());
             existingPayment.setPaymentMethod(payment.getPaymentMethod());
@@ -42,14 +42,14 @@ public class PaymentService {
     }
 
     public void deletePayment(Long id) {
-        paymentRepository.deleteById(id.intValue());
+        paymentRepository.deleteById(id);
     }
 
 
     public List<Payment> findPaymentsByTripId(Long tripId)
     {
         //fixme to get list of payments
-        return paymentRepository.findPaymentsByTrip(tripId);
+        return paymentRepository.findPaymentsByTripId(tripId);
     }
 
     public List<Payment> findByAmountThreshold(Double threshold)
