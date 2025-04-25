@@ -19,7 +19,6 @@ services:
       - "8080:8080"
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://mini2project:5432/mini2db
-      #FIXME postgresss???
       SPRING_DATASOURCE_USERNAME: postgresss
       SPRING_DATASOURCE_PASSWORD: 12345
       SPRING_DATA_MONGODB_URI: mongodb://root:example@mongo:27017/ratings?authSource=admin
